@@ -1,11 +1,11 @@
 import loadUserData from '../services/loadUserData';
-import { TGetNewUserCallbackFunction, TOnLoadNewUser, TShownUsers } from './userInterface';
+import { TNewUserPortCallback, TOnLoadNewUser, TShownUsers } from './userInterface';
 
 const shownUsers: TShownUsers = [];
 
 export const shownUsersPort = (): TShownUsers => shownUsers;
 
-export const newUserPort = (callback: TGetNewUserCallbackFunction): void => {
+export const newUserPort = (callback: TNewUserPortCallback): void => {
     const onLoad: TOnLoadNewUser = userData => {
         shownUsers.push(userData);
 
