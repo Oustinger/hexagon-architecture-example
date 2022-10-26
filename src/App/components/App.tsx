@@ -1,7 +1,8 @@
 import React from 'react';
+import Example from "../../Example";
 
 const App = (): JSX.Element => {
-    return <div>Web site created using create-react-app</div>;
+    return <Example />;
 };
 
 export default App;
