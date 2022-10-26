@@ -12,4 +12,4 @@ ReactDOM.render(
 );
 
 setupErrorHandling();
-// reportWebVitals(console.log);
+reportWebVitals(console.log);
