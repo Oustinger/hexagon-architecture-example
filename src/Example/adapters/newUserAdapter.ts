@@ -1,4 +1,5 @@
-import { newUserPort, TGetNewUserCallbackFunction } from '../entities/user';
+import { newUserPort } from '../entities/user';
+import { TGetNewUserCallbackFunction } from "../entities/userInterface";
 
 function newUserAdapter(callback: TGetNewUserCallbackFunction) {
     newUserPort(callback);
