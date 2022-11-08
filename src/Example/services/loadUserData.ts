@@ -1,12 +1,24 @@
-import axios from 'axios';
-import { TLoadUserData } from '../entities/userInterface';
+import axios, { AxiosResponse } from 'axios';
+import { TLoadUserData } from '../entities/user/ports/INewUserPort';
+
+interface IResult {
+    name: {
+        title: string;
+        first: string;
+        last: string;
+    };
+}
+
+interface IResponse {
+    results: Array<IResult>;
+}
 
 const loadUserData: TLoadUserData = callback => {
-    axios.get('https://randomuser.me/api/').then((res: any) => {
-        const name = res.data.results[0].name;
+    axios.get('https://randomuser.me/api/').then(({ data }: AxiosResponse<IResponse>): void => {
+        const { name } = data.results[0];
         const fullName = `${name.title} ${name.first} ${name.last}`;
 
-        return callback({ name: fullName });
+        callback({ name: fullName });
     });
 };
 

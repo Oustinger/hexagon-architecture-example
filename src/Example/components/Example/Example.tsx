@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import newUserAdapter from '../../adapters/newUserAdapter';
-import shownUsersAdapter from '../../adapters/shownUsersAdapter';
-import { IUserData } from '../../entities/userInterface';
+import newUserAdapter from '../../adapters/user/newUserAdapter';
+import shownUsersAdapter from '../../adapters/user/shownUsersAdapter';
+import { IUserData, TShownUsers } from '../../entities/user/user';
 
 const Example = (): JSX.Element => {
     const [isPreloading, setIsPreloading] = useState(false);
     const [userData, setUserData] = useState<IUserData>();
-    const [shownUsers, setShownUsers] = useState(shownUsersAdapter());
+    const [shownUsers, setShownUsers] = useState<TShownUsers>(shownUsersAdapter());
 
     const changeUser = () => {
         setIsPreloading(true);
