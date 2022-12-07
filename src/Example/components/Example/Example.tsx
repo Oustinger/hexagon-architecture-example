@@ -8,7 +8,7 @@ const Example = (): JSX.Element => {
     const [userData, setUserData] = useState<IUserData>();
     const [shownUsers, setShownUsers] = useState<TShownUsers>(shownUsersAdapter());
 
-    const changeUser = () => {
+    const changeUser = (): void => {
         setIsPreloading(true);
 
         newUserAdapter(newUser => {

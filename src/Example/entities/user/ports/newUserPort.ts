@@ -8,13 +8,7 @@ export const newUserPort: IPortTemplate<unknown, TNewUserPortCallback> = (callba
         shownUsers.push(userData);
 
         callback(userData);
-
-        // вопрос в зал: как это типизировать?
-        // return '123';
     };
 
     loadUserData(onLoad);
-
-    // то же
-    // return '123';
 };
